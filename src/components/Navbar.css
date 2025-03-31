@@ -10,11 +10,11 @@
   align-items: center;
   z-index: 1000;
   color: #fff;
+  transition: max-height 0.5s ease-in-out;
 }
 
 .navbar .left-section {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
@@ -23,6 +23,7 @@
 }
 
 .navbar .middle-section {
+  display: flex;
   justify-content: space-around;
 }
 
@@ -35,4 +36,188 @@
 
 .navbar .middle-section a:hover {
   color: #ddd;
+}
+
+.menu-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1001;
+  display: none;
+}
+
+.menu-icon div {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Morphing animation */
+.menu-icon.active div:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.menu-icon.active div:nth-child(2) {
+  opacity: 0; /* Hide middle line */
+}
+
+.menu-icon.active div:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+
+.overlay {
+  position: fixed;
+  top: 10%;
+  right: -100%; /* Initially off-screen */
+  width: 100%;
+  height: 90%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 999;
+  transition: right 0.5s ease-in-out; /* Smooth transition */
+}
+
+.overlay.active {
+  right: 0;
+}
+
+.overlay .menu-links {
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 25%
+}
+
+.overlay .menu-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 45px;
+  font-weight: 100;
+  width: 80%;
+  position: relative;
+}
+
+.overlay .menu-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust the gap below text */
+  width: 0%;
+  height: 2px; /* Thickness of underline */
+  background: white;
+  transition: width 0.25s ease-in-out;
+}
+
+.overlay .menu-links a:hover {
+  color: #a3a3a3;
+}
+
+.overlay .menu-links a:hover::after {
+  width: 100%;
+}
+
+
+.overlay .side-container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background-color: #2d2d2d;
+  width: 250px;
+  height: 380px;
+  top: 40%;
+  left: 70%;
+  border-radius: 10px;
+}
+
+.side-container .latest-video {
+  background: #05050559;
+  width: 100px;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.nav-youtube {
+  border: none;
+  width: 230px;
+  padding: 10px;
+}
+
+.side-container div {
+  padding: 10px;
+}
+
+.overlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.overlay .close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.overlay .socials {
+  position: absolute;
+  top: 85%;
+  left: 20%;
+  text-align: center;
+}
+
+.overlay .socials img {
+  height: 15px;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 3px;
+  background-color: #454545;
+  transition: border-radius 0.25s ease-in-out;
+}
+
+.overlay .socials img:hover {
+  border-radius: 10px;
+  background-color: #6f6f6f;
+}
+
+@media (max-width: 768px) {
+  .middle-section a {
+    display: none;
+  }
+
+  .left-section {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50%
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 70%;
+    transform: translateY(-50%);
+  }
+
+  .navbar {
+    height: 00px;
+  }
 }
