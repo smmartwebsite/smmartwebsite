@@ -1,19 +1,12 @@
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   return (
     <nav className="navbar">
         <div className="left-section">
             <div className="logo">
-                smmart
+                <b><span style={{color: "#646cff"}}>smm</span></b>art
             </div>
         </div>
 
@@ -26,7 +19,7 @@ const Navbar = () => {
         </div>
 
         <div className="right-section">
-            
+
         </div>
       
     </nav>

@@ -1,11 +1,10 @@
-/* Ensure Navbar is Fixed on Top */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background: #000;
-  padding: 15px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -20,7 +19,7 @@
 }
 
 .navbar .left-section .logo {
-
+  font-size: large;
 }
 
 .navbar .middle-section {
