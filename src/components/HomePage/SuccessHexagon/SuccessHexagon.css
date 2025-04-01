@@ -1,0 +1,202 @@
+/* Modern styling */
+:root {
+  --primary-color: #6366f1;
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  --orange: #f97316;
+  --orange-light: #fb923c;
+  --text-dark: #1e293b;
+  --text-light: #64748b;
+  --bg-light: #f8fafc;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title {
+  margin-top: 0px;
+  text-align: center;
+  color: white;
+}
+
+.success-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  position: relative; /* Added for mobile positioning */
+}
+
+/* Modern description box */
+.description-box {
+  width: 60%;
+  border-radius: 10px;
+  margin-left: 50px;
+  padding: 3rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.description-overlay {
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  color: white;
+  transition: var(--transition);
+}
+
+.description-title {
+  font-size: 5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.description-text {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Connected hexagon container */
+.hexagon-connector-container {
+  width: 40%;
+  position: relative;
+  height: 400px;
+}
+
+.connectors {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.connector-line {
+  stroke: var(--orange);
+  stroke-width: 3;
+  stroke-dasharray: 0;
+  transition: var(--transition);
+}
+
+.hexagon-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.hex-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.hex-label span {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  transition: var(--transition);
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.hex-label:hover span {
+  background: var(--orange);
+  color: white;
+  transform: scale(1.05);
+}
+
+.hex-label.active span {
+  background: var(--orange);
+  color: white;
+  font-weight: 600;
+}
+
+/* Position the labels at hexagon vertices */
+.label-1 { top: 12%; left: 50%; }
+.label-2 { top: 30%; left: 68%; }
+.label-3 { top: 55%; left: 68%; }
+.label-4 { top: 75%; left: 50%; }
+.label-5 { top: 55%; left: 32%; }
+.label-6 { top: 30%; left: 32%; }
+
+/* Responsive design - Mobile Layout */
+/* Responsive design - Mobile Layout */
+@media (max-width: 768px) {
+  .success-container {
+    flex-direction: column;
+    padding: 1rem;
+    height: 400px;
+    margin-left: 0; /* Remove negative margin */
+    width: 100vw; /* Ensure full viewport width */
+    overflow: hidden; /* Prevent any overflow */
+    box-sizing: border-box; /* Include padding in width calculation */
+  }
+  
+  .description-box {
+    width: calc(100% - 2rem); /* Account for container padding */
+    height: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 1rem;
+    align-items: flex-start;
+  }
+  
+  .hexagon-connector-container {
+    position: absolute;
+    width: 40%;
+    height: 200px;
+    right: 0; /* Changed from -30px to 0 */
+    bottom: 0; /* Changed from -10px to 0 */
+    z-index: 2;
+  }
+  
+  /* Adjust label positions to fit within container */
+  .label-1 { top: 10%; left: 50%; }
+  .label-2 { top: 25%; left: 70%; } /* Adjusted from 65% to 70% */
+  .label-3 { top: 50%; left: 70%; } /* Adjusted from 65% to 70% */
+  .label-4 { top: 70%; left: 50%; }
+  .label-5 { top: 50%; left: 30%; } /* Adjusted from 35% to 30% */
+  .label-6 { top: 25%; left: 30%; } /* Adjusted from 35% to 30% */
+  
+  /* Keep the rest of your mobile styles the same */
+  .connectors {
+    transform: scale(1);
+  }
+  
+  .hex-label {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .hex-label span {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .description-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .description-text {
+    font-size: 1rem;
+  }
+}

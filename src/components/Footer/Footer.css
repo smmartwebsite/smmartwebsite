@@ -1,0 +1,270 @@
+:root {
+  /* Primary Colors */
+  --primary-color: #6445fe;
+  --primary-hover: #7c3aed;
+  --gradient-start: #1e1e2f;
+  --gradient-end: #141425;
+  --accent-gradient-start: #8b5cf6;
+  --accent-gradient-end: #ec8748;
+
+  /* Text Colors */
+  --text-primary: #d1d5db;
+  --text-secondary: #9ca3af;
+  --text-dark: #1e1e2f;
+
+  /* Backgrounds & Surfaces */
+  --bg-light: rgba(255, 255, 255, 0.05);
+
+  /* Sizes */
+  --footer-padding: 4rem 2rem 2rem;
+  --max-width: 1240px;
+}
+
+.dynamic-footer {
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--text-primary);
+  padding: var(--footer-padding);
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-wrapper {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section {
+  padding: 1rem;
+}
+
+.footer-brand {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-nav a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: var(--primary-color);
+}
+
+.subscribe-section h3,
+.social-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.subscribe-form {
+  position: relative;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--bg-light);
+  border-radius: 25px;
+  padding: 0.25rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  outline: none;
+  border-radius: 25px 0 0 25px;
+}
+
+.subscribe-btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 25px;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.subscribe-btn:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-item {
+  position: relative;
+}
+
+.social-item a {
+  color: var(--text-secondary);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-item:hover a {
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary-color);
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.social-item:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  bottom: 150%;
+}
+
+.contact-toggle {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.contact-toggle:hover {
+  background: var(--primary-color);
+  color: var(--text-primary);
+}
+
+.contact-card {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: var(--card-bg);
+  color: var(--text-dark);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.contact-card p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.scroll-top-btn {
+  background: var(--primary-color);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-3px);
+  background: var(--primary-hover);
+}
+
+.footer-decor {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-gradient-start), var(--accent-gradient-end));
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Add these new styles to your existing Footer.css */
+
+.address-section h3,
+.contact-section h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.address-info,
+.contact-info {
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.address-info p,
+.contact-info p {
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.icon {
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+  color: var(--primary-color);
+  min-width: 1rem;
+}
+
+/* Update the grid layout for the new sections */
+.footer-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+/* Remove any existing subscription form styles */
+.subscribe-section,
+.subscribe-form,
+.input-wrapper,
+.subscribe-btn {
+  display: none;
+}
