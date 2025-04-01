@@ -19,7 +19,7 @@
 }
 
 .navbar .left-section .logo {
-  font-size: large;
+  font-size: large; 
 }
 
 .navbar .middle-section {
@@ -218,6 +218,15 @@
   }
 
   .navbar {
-    height: 00px;
+    padding-bottom: 40px;
   }
+  .navbar .left-section .logo {
+    position: absolute;
+    top: -12px;
+  }
+  .menu-icon {
+    position: absolute;
+    top: 32px;
+  }
+  
 }
