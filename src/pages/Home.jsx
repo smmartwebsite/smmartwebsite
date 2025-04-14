@@ -21,7 +21,7 @@ const Home = () => {
     </section>
 
     <section>
-      <LiveCounter />
+
     </section>
 
     <Footer />
